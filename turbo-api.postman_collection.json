@@ -1,0 +1,215 @@
+{
+	"info": {
+		"_postman_id": "79b1abaf-0516-4613-9a90-82376b82f632",
+		"name": "turbo-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29584765"
+	},
+	"item": [
+		{
+			"name": "get all sales",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"brandId\": 1,\r\n      \"modelIdList\": [5, 7, 9, 3],\r\n    \"carOptions\": {\r\n        \"alloyWheels\": true,\r\n        \"centralClosure\": true,\r\n        \"leatherSalon\": true,\r\n        \"seatVentilation\": true,\r\n        \"abs\": true,\r\n        \"parkingRadar\": true,\r\n        \"xenonLamps\": true,\r\n        \"luke\": true,\r\n        \"conditioners\": true,\r\n        \"rearViewCamera\": true,\r\n        \"rainSensor\": true,\r\n        \"seatHeating\": true,\r\n        \"sideCurtains\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sales?page=0&size=100&sortBy=FIRST_EXPENSIVE",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sales"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "100"
+						},
+						{
+							"key": "sortBy",
+							"value": "FIRST_EXPENSIVE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get sale by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/sales/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sales",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all features",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/v1/features",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"features"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add sale",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"car\": {\r\n    \"modelId\": 7,\r\n    \"typeOfBodyId\": 3,\r\n    \"colorId\": 2,\r\n    \"year\": 0,\r\n    \"mileage\": 0,\r\n    \"price\": 0,\r\n    \"currency\": \"AZN\",\r\n    \"gearBox\": \"MEXANIKI\",\r\n    \"transmission\": \"ARXA\",\r\n    \"carOptions\": {\r\n      \"alloyWheels\": true,\r\n      \"centralClosure\": true,\r\n      \"leatherSalon\": true,\r\n      \"seatVentilation\": true,\r\n      \"abs\": true,\r\n      \"parkingRadar\": true,\r\n      \"xenonLamps\": true,\r\n      \"luke\": true,\r\n      \"conditioners\": true,\r\n      \"rearViewCamera\": true,\r\n      \"rainSensor\": true,\r\n      \"seatHeating\": true,\r\n      \"sideCurtains\": true\r\n    },\r\n    \"new\": true\r\n  },\r\n  \"cityId\": 1,\r\n  \"credit\": false,\r\n  \"barter\": true,\r\n  \"description\": \"bomba masin satilir\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sales",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update sale",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": 1,\r\n  \"car\": {\r\n    \"modelId\": 7,\r\n    \"typeOfBodyId\": 3,\r\n    \"colorId\": 2,\r\n    \"year\": 0,\r\n    \"mileage\": 0,\r\n    \"price\": 0,\r\n    \"currency\": \"AZN\",\r\n    \"gearBox\": \"MEXANIKI\",\r\n    \"transmission\": \"ARXA\",\r\n    \"carOptions\": {\r\n      \"alloyWheels\": true,\r\n      \"centralClosure\": true,\r\n      \"leatherSalon\": true,\r\n      \"seatVentilation\": true,\r\n      \"abs\": true,\r\n      \"parkingRadar\": true,\r\n      \"xenonLamps\": true,\r\n      \"luke\": true,\r\n      \"conditioners\": true,\r\n      \"rearViewCamera\": true,\r\n      \"rainSensor\": true,\r\n      \"seatHeating\": true,\r\n      \"sideCurtains\": true\r\n    },\r\n    \"new\": true\r\n  },\r\n  \"cityId\": 1,\r\n  \"credit\": false,\r\n  \"barter\": true,\r\n  \"description\": \"bomba masin satilir\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/sales/8",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sales",
+						"8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"filankes\",\r\n    \"email\": \"filankes@gmail.com\",\r\n    \"password\": \"filankes123\",\r\n    \"mobile\": \"+99452165415\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"armud\",\r\n    \"email\": \"filankes@gmail.com\",\r\n    \"password\": \"filankes12345\",\r\n    \"mobile\": \"+99452165415\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/v1/users/5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

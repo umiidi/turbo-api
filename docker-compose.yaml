@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  turbo:
+    image: umiidi/turbo-api:1.0.c4c14c7
+    restart: always
+    ports:
+      - 8080:8090
+    environment:
+      - DB_CONNECTION_IP=db
+      - DB_CONNECTION_USERNAME=root
+      - DB_CONNECTION_PASSWORD=12345
+    depends_on:
+      - db
+  db:
+    hostname: mysql
+    container_name: turbo-db
+    image: mysql:8.0.23
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+    ports:
+      - "3306:3306"
+volumes:
+  db_data:
